@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import myImage from "../utils/images/lo.png";
+// import myImage from "../utils/images/lo.png";
 function Home() {
   const [universities, setUniversities] = useState([]);
   //   declaring a state variable called universities and initializing it with an empty array using the useState hook.

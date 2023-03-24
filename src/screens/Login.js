@@ -1,14 +1,14 @@
 import { React, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate} from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 // import Home from "./Home";
 const client_id =
   "139295316401-7hb1fd7feh6bsh5i3lu9oijft6cigrm4.apps.googleusercontent.com";
-function Login(props) {
+function Login() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
-  const onSuccess = (res) => {
-    console.log("[Login Success] currentUser:", res.profileObj);
+  const onSuccess = () => {
+    // console.log("[Login Success] currentUser:", res.profileObj);
     setIsLoggedIn(true);
     navigate("/Home");
   };
@@ -19,8 +19,7 @@ function Login(props) {
     <div>
       <GoogleOAuthProvider>
         {isLoggedIn ? (
-          // <Navigate to="/Home" />
-          <div><h1>hii</h1></div>
+          <Navigate to="/Home" />
         ) : (
           <GoogleLogin
             client_id={client_id}
